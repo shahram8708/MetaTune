@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AI-Powered MP3 Metadata Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+
+        .jumbotron {
+            background-color: #007bff;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .card {
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-group-item {
+            background-color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-group-item strong {
+            color: #007bff;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .btn-secondary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0056b3;
+        }
+
+        .first-jumbotron {
+            background-color: #007bff;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .second-jumbotron {
+            background-color: #f8f9fa;
+            color: #495057;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .second-jumbotron ol {
+            text-align: left;
+        }
+
+        .second-jumbotron li {
+            margin-bottom: 0.5rem;
+        }
+
+        ol li {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">AI-Powered MP3 Metadata Details</h1>
+            <p class="lead">Here is the detailed metadata extracted from your MP3 file.</p>
+            <hr class="my-4">
+            <p>This information is powered by advanced AI algorithms that analyze your MP3 file to provide comprehensive
+                metadata.
+            <p style="text-align: left;">Our AI features include:</p>
+            <ol>
+                <li>Automatic identification of artist, album, title, genre, and other metadata.</li>
+                <li>Intelligent extraction of album artwork.</li>
+                <li>Accurate detection of audio properties such as duration, bitrate, and sample rate.</li>
+                <li>Robust handling of various MP3 file formats and encoding methods.</li>
+                <li>Continuous learning and improvement to ensure high-quality results.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Title:</strong> {{ metadata.title }}</li>
+                    <li class="list-group-item"><strong>Artist:</strong> {{ metadata.artist }}</li>
+                    <li class="list-group-item"><strong>Album:</strong> {{ metadata.album }}</li>
+                    <li class="list-group-item"><strong>Genre:</strong> {{ metadata.genre }}</li>
+                    <li class="list-group-item"><strong>Release Year:</strong> {{ metadata.release_year }}</li>
+                    <li class="list-group-item"><strong>Track Number:</strong> {{ metadata.track_number }}</li>
+                    <li class="list-group-item"><strong>Comments:</strong> {{ metadata.comments }}</li>
+                    <li class="list-group-item"><strong>Duration:</strong> {{ metadata.duration }} seconds</li>
+                    <li class="list-group-item"><strong>Bitrate:</strong> {{ metadata.bitrate }} kbps</li>
+                </ul>
+                <a href="{{ url_for('upload_file') }}" class="btn btn-secondary btn-block mt-3">Upload Another File</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 AI-Powered MP3 Metadata Extractor. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

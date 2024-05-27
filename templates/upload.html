@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>AI-Powered MP3 Metadata Extractor</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin-top: 50px;
+    }
+
+    .jumbotron {
+      background-color: #007bff;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .card {
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .file-area {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      border-radius: 10px;
+      border: 2px dashed #007bff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #007bff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .file-area:hover {
+      background-color: #e9f5ff;
+    }
+
+    .file-area input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .file-area .file-dummy {
+      font-size: 1.25rem;
+    }
+
+    .file-area .file-dummy span {
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px 0;
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .first-jumbotron {
+      background-color: #007bff;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .second-jumbotron {
+      background-color: #f8f9fa;
+      color: #495057;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .second-jumbotron ol {
+      text-align: left;
+    }
+
+    .second-jumbotron li {
+      margin-bottom: 0.5rem;
+    }
+
+    ol li {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1 class="display-4">AI-Powered MP3 Metadata Extractor</h1>
+      <p class="lead">Upload your MP3 files and get detailed metadata instantly!</p>
+      <hr class="my-4">
+      <p>This service leverages cutting-edge AI technology to provide you with comprehensive metadata from your MP3
+        files.</p>
+      <p style="text-align: left;">Our AI features include:</p>
+      <ol>
+        <li>Automatic identification of artist, album, title, genre, and other metadata.</li>
+        <li>Intelligent extraction of album artwork.</li>
+        <li>Accurate detection of audio properties such as duration, bitrate, and sample rate.</li>
+        <li>Robust handling of various MP3 file formats and encoding methods.</li>
+        <li>Continuous learning and improvement to ensure high-quality results.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Upload MP3 File</h5>
+        <form method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <div class="file-area">
+              <input type="file" id="fileInput" name="file" required>
+              <div class="file-dummy">
+                <div class="default">Drag & drop your file here or click to browse</div>
+                <div class="success">Great, your file is selected. Click upload!</div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 AI-Powered MP3 Metadata Extractor. All rights reserved.</p>
+  </footer>
+  <script>
+    document.querySelector('#fileInput').addEventListener('change', function (e) {
+      var fileName = e.target.files[0].name;
+      var fileDummy = document.querySelector('.file-dummy');
+      fileDummy.querySelector('.default').style.display = 'none';
+      fileDummy.querySelector('.success').style.display = 'block';
+      fileDummy.querySelector('.success').innerText = 'File selected: ' + fileName;
+    });
+  </script>
+</body>
+
+</html>
